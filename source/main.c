@@ -35,7 +35,7 @@ void Tick(){
             if(!PINA0 || PINA1){
                 state = OFF;
             }
-            break
+            break;
         case default:
             break;
     }

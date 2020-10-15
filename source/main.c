@@ -18,12 +18,9 @@ enum States {START, OFF, ON}state;
 void Tick(){
     switch(state){
         case START:
-        {
             state = OFF;
             break;
-        }
         case OFF:
-        {
             if(!PINA0 || PINA1){
                 state = OFF;
             }
@@ -31,9 +28,7 @@ void Tick(){
                 state = ON;
             }
             break;
-        }
         case ON:
-        {
             if(PINA0 && !PINA1){
                 state = ON;
             }
@@ -41,32 +36,21 @@ void Tick(){
                 state = OFF;
             }
             break;
-        }
-        case default:
-        {
+        default:
             break;
-        }
     }
 
     switch(state){
         case START:
-        {
             break;
-        }
         case OFF:
-        {
             PORTB = 0;
             break;
-        }
         case ON:
-        {
             PORTB = 0x01;
             break;
-        }
-        case default:
-        {
+        default:
             break;
-        }
     }
 }
 

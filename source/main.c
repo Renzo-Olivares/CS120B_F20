@@ -42,7 +42,6 @@ void Tick(){
 
     switch(state){
         case START:
-            PORTB = 0x01;
             break;
         case OFF:
             PORTB = 0x00;
@@ -61,7 +60,7 @@ int main(void) {
     DDRB = 0xFF;
     PORTB = 0x00;
 
-    state = START;
+    state = ON;
 
     while(1){
         Tick();

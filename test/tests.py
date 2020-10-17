@@ -15,19 +15,19 @@
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
 tests = [ 
-    {'description': 'Test 1',
+    {'description': 'Test 1: PINA: 0x00 => PORTB: 0x00',
     'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 } ],
     'expected': [('PORTB',0x00)],
     },
-    {'description': 'Test 2',
+    {'description': 'Test 2: PINA: 0x01 => PORTB: 0x01',
     'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 1 } ],
     'expected': [('PORTB',0x01)],
     },
-    {'description': 'Test 3',
+    {'description': 'Test 3: "PINA: 0x02 => PORTB: 0x00"',
     'steps': [ {'inputs': [('PINA',0x02)], 'iterations': 1 } ],
     'expected': [('PORTB',0x00)],
     },
-    {'description': 'Test 4',
+    {'description': 'Test 4: PINA: 0x03 => PORTB: 0x00',
     'steps': [ {'inputs': [('PINA',0x03)], 'iterations': 1 } ],
     'expected': [('PORTB',0x00)],
     },
@@ -43,5 +43,5 @@ tests = [
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
 # variables listed here will display everytime you hit (and stop at) a breakpoint
-watch = ['main::state','PORTB']
+# watch = ['main::state','PORTB']
 

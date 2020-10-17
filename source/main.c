@@ -42,9 +42,10 @@ void Tick(){
 
     switch(state){
         case START:
+            PORTB = 0x00;
             break;
         case OFF:
-            PORTB = 0;
+            PORTB = 0x00;
             break;
         case ON:
             PORTB = 0x01;

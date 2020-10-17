@@ -16,8 +16,8 @@
 
 enum States {START, OFF, ON}state;
 void Tick(){
-    unsigned char pinA0 = PINA & 0x00;
-    unsigned char pinA1 = PINA & 0x01;
+    unsigned char pinA0 = PINA & 0x01;
+    unsigned char pinA1 = PINA & 0x02;
 
     switch(state){
         case START:

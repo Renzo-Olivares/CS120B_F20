@@ -23,6 +23,7 @@ void Tick(){
         case OFF:
             if(!PINA0 || PINA1){
                 state = OFF;
+                printf("hello world");
             }
             if(PINA0 && !PINA1){
                 state = ON;

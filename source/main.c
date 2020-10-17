@@ -60,7 +60,7 @@ int main(void) {
     DDRB = 0xFF;
     PORTB = 0x00;
 
-    state = ON;
+    state = START;
 
     while(1){
         Tick();

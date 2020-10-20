@@ -64,7 +64,7 @@ void Tick(){
          printf("start state\n");
          break;
       case COUNT:
-         B = 0x00;
+         PORTC = 0x00;
          availcnt = 0x00;
          pastSensor = 0x00;
          printf("count state\n");

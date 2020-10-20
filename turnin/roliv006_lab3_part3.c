@@ -33,6 +33,9 @@ int main(void) {
         unsigned char fastenwarning = (pinA4 && pinA5) && !pinA6;
 
         switch(fuellevel){
+            case 0x00:
+                PORTC = fastenwarning? 0xC0: 0x40;
+                break;
             case 0x01:
             case 0x02:
                 //light PC5

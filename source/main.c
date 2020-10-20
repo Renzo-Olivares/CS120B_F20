@@ -29,16 +29,16 @@ int main(void) {
         unsigned char pinA5 = PINA & 0x20 >> 5;
         unsigned char pinA6 = PINA & 0x40 >> 6;
         unsigned char pinA7 = PINA & 0x80 >> 7;
-        unsigned char pinB0 = PINB & 0x01;
-        unsigned char pinB1 = PINB & 0x02 >> 1;
-        unsigned char pinB2 = PINB & 0x04 >> 2;
-        unsigned char pinB3 = PINB & 0x08 >> 3;
-        unsigned char pinB4 = PINB & 0x10 >> 4;
-        unsigned char pinB5 = PINB & 0x20 >> 5;
-        unsigned char pinB6 = PINB & 0x40 >> 6;
-        unsigned char pinB7 = PINB & 0x80 >> 7;
-        unsigned char total = pinA0 + pinA1 + pinA2 + pinA3 + pinA4 + pinA5 + pinA6 + pinA7 + pinB0 + pinB1 + pinB2 + pinB3 + pinB4 + pinB5 + pinB6 + pinB7;
-
+        // unsigned char pinB0 = PINB & 0x01;
+        // unsigned char pinB1 = PINB & 0x02 >> 1;
+        // unsigned char pinB2 = PINB & 0x04 >> 2;
+        // unsigned char pinB3 = PINB & 0x08 >> 3;
+        // unsigned char pinB4 = PINB & 0x10 >> 4;
+        // unsigned char pinB5 = PINB & 0x20 >> 5;
+        // unsigned char pinB6 = PINB & 0x40 >> 6;
+        // unsigned char pinB7 = PINB & 0x80 >> 7;
+        // unsigned char total = pinA0 + pinA1 + pinA2 + pinA3 + pinA4 + pinA5 + pinA6 + pinA7 + pinB0 + pinB1 + pinB2 + pinB3 + pinB4 + pinB5 + pinB6 + pinB7;
+        unsigned char total = pinA0 + pinA1 + pinA2 + pinA3 + pinA4 + pinA5 + pinA6 + pinA7;
         PORTC = total;
     }
 

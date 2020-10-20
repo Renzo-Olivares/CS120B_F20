@@ -21,10 +21,10 @@ unsigned char availcnt = 0x00;
 unsigned char pastSensor = 0x00;
 
 void Tick(){
-    unsigned char pinA0 = PINA && 0x01;
-    unsigned char pinA1 = PINA && 0x02;
-    unsigned char pinA2 = PINA && 0x04;
-    unsigned char pinA3 = PINA && 0x08;
+    unsigned char pinA0 = PINA & 0x01;
+    unsigned char pinA1 = PINA & 0x02;
+    unsigned char pinA2 = PINA & 0x04;
+    unsigned char pinA3 = PINA & 0x08;
 
    switch(state){
       case START:

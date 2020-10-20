@@ -95,7 +95,7 @@ void Tick(){
          printf("four state\n");
          break;
       case OUTPUT:
-         PORTC = pastSensor;
+         PORTC = availcnt;
          printf("out state\n");
          break;
       default:

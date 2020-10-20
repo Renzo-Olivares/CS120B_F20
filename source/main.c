@@ -54,7 +54,7 @@ int main(void) {
             case 0x08:
             case 0x09:
                 //light PC5..PC2
-                PORTC = fastenwarning? 0xB8:0x3C;
+                PORTC = fastenwarning? 0xBC:0x3C;
                 break;
             case 0x0A:
             case 0x0B:

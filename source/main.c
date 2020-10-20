@@ -20,33 +20,27 @@ enum States{START, OUTPUT}state;
 
 void Tick(){
     unsigned char pinA0 = PINA & 0x01;
-    unsigned char pinA1 = PINA & 0x02;
-    unsigned char pinA2 = PINA & 0x04;
-    unsigned char pinA3 = PINA & 0x08;
+    unsigned char pinA1 = (PINA & 0x02) >> 1;
+    unsigned char pinA2 = (PINA & 0x04) >> 2;
+    unsigned char pinA3 = (PINA & 0x08) >> 3;
     unsigned char availcnt = pinA0 + pinA1 + pinA2 + pinA3;
 
    switch(state){
       case START:
          state = OUTPUT;
-         printf("start transition\n");
          break;
       case OUTPUT:
-         printf("out transition\n");
          break;
       default:
-         printf("error transition\n");
          break;
    }
    switch(state){
       case START:
-         printf("start state\n");
          break;
       case OUTPUT:
          PORTC = availcnt;
-         printf("out state\n");
          break;
       default:
-         printf("error state\n");
          break;
    }
 }

@@ -29,8 +29,46 @@ int main(void) {
 
         unsigned char fuellevel = pinA0 + pinA1 + pinA2 + pinA3;
 
+        switch(fuellevel){
+            case 0x01:
+            case 0x02:
+                //light PC5
+                //light low fuel
+                PORTC = 0x60;
+                break;
+            case 0x03:
+            case 0x04:
+                //light PC5 and PC4
+                //light low fuel
+                PORTC = 0x70;
+                break;
+            case 0x05:
+            case 0x06:
+                //light PC5..PC3
+                PORTC = 0x38;
+                break;
+            case 0x07:
+            case 0x08:
+            case 0x09:
+                //light PC5..PC2
+                PORTC = 0x3C;
+                break;
+            case 0x0A:
+            case 0x0B:
+            case 0x0C:
+                //light PC5..PC1
+                PORTC = 0x3E;
+                break;
+            case 0x0D:
+            case 0x0E:
+            case 0x0F:
+                //light PC5..PC0
+                PORTC = 0x3F;
+                break;
+            default:
+                break;
 
-        PORTC = fuellevel;
+        }
     }
 
     return 1;

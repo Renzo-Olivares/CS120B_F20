@@ -37,7 +37,7 @@ void Tick(){
       case START:
          break;
       case OUTPUT:
-         PORTC = (fulllots << 8) | availcnt;
+         PORTC = (fulllots << 8) & availcnt;
          break;
       default:
          break;

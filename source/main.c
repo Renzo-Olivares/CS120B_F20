@@ -22,9 +22,9 @@ unsigned char pastSensor = 0x00;
 
 void Tick(){
     unsigned char pinA0 = PINA & 0x01;
-    unsigned char pinA1 = PINA & 0x02 >> 1;
-    unsigned char pinA2 = PINA & 0x04 >> 2;
-    unsigned char pinA3 = PINA & 0x08 >> 3;
+    unsigned char pinA1 = PINA & 0x02;
+    unsigned char pinA2 = PINA & 0x04;
+    unsigned char pinA3 = PINA & 0x08;
 
    switch(state){
       case START:
@@ -95,7 +95,7 @@ void Tick(){
          printf("four state\n");
          break;
       case OUTPUT:
-         PORTC = availcnt;
+         PORTC = pastSensor;
          printf("out state\n");
          break;
       default:

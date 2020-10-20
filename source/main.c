@@ -30,7 +30,7 @@ int main(void) {
         unsigned char pinA6 = PINA & 0x40;
 
         unsigned char fuellevel = pinA0 + pinA1 + pinA2 + pinA3;
-        bool fastenwarning = (pinA4 && pinA5) && !pinA6;
+        unsigned char fastenwarning = (pinA4 && pinA5) && !pinA6;
 
         switch(fuellevel){
             case 0x01:

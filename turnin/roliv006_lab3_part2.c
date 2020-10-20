@@ -30,6 +30,9 @@ int main(void) {
         unsigned char fuellevel = pinA0 + pinA1 + pinA2 + pinA3;
 
         switch(fuellevel){
+            case 0x00:
+                PORTC = 0x40;
+                break;
             case 0x01:
             case 0x02:
                 //light PC5

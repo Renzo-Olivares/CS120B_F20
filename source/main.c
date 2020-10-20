@@ -21,7 +21,7 @@ void Tick(){
     unsigned char pinA1 = (PINA & 0x02) >> 1;
     unsigned char pinA2 = (PINA & 0x04) >> 2;
     unsigned char pinA3 = (PINA & 0x08) >> 3;
-    unsigned char availcnt = pinA0 + pinA1 + pinA2 + pinA3;
+    unsigned char availcnt = 4 - (pinA0 + pinA1 + pinA2 + pinA3);
     unsigned char fulllots = pinA0 & pinA1 & pinA2 & pinA3;
 
    switch(state){

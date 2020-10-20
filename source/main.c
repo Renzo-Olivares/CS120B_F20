@@ -19,7 +19,6 @@ int main(void) {
     PORTB = 0xFF;
     DDRC = 0xFF;
     PORTC = 0x00; 
-    unsigned char total = 0x00;
     
     while (1) {
         unsigned char pinA0 = PINA & 0x01;
@@ -38,7 +37,7 @@ int main(void) {
         unsigned char pinB5 = PINB & 0x20 >> 5;
         unsigned char pinB6 = PINB & 0x40 >> 6;
         unsigned char pinB7 = PINB & 0x80 >> 7;
-        total = pinA0 + pinA1 + pinA2 + pinA3 + pinA4 + pinA5 + pinA6 + pinA7 + pinB0 + pinB1 + pinB2 + pinB3 + pinB4 + pinB5 + pinB6 + pinB7;
+        unsigned char total = pinA0 + pinA1 + pinA2 + pinA3 + pinA4 + pinA5 + pinA6 + pinA7 + pinB0 + pinB1 + pinB2 + pinB3 + pinB4 + pinB5 + pinB6 + pinB7;
 
         PORTC = total;
     }

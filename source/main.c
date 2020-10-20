@@ -19,9 +19,9 @@ int main(void) {
     PORTB = 0xFF;
     DDRC = 0xFF;
     PORTC = 0x00; 
-
+    unsigned char total = 0x00;
+    
     while (1) {
-        unsigned char total = 0x00;
         unsigned char pinA0 = (PINA & 0x01);
         unsigned char pinA1 = (PINA & 0x02) >> 1;
         unsigned char pinA2 = PINA & 0x04 >> 2;

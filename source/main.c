@@ -33,13 +33,13 @@ int main(void) {
             case 0x01:
             case 0x02:
                 //light PC5
-                //light low fuel
+                //light low fuel PC6
                 PORTC = 0x60;
                 break;
             case 0x03:
             case 0x04:
                 //light PC5 and PC4
-                //light low fuel
+                //light low fuel PC6
                 PORTC = 0x70;
                 break;
             case 0x05:

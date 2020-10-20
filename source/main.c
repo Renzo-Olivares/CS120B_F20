@@ -22,7 +22,7 @@ int main(void) {
     unsigned char total = 0x00;
     
     while (1) {
-        unsigned char pinA0 = (PINA & 0x01);
+        unsigned char pinA0 = PINA & 0x01;
         unsigned char pinA1 = (PINA & 0x02) >> 1;
         unsigned char pinA2 = PINA & 0x04 >> 2;
         unsigned char pinA3 = PINA & 0x08 >> 3;

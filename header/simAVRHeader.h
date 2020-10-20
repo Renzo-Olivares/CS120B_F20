@@ -11,7 +11,6 @@ AVR_MCU_VCD_FILE("build/results/Lab3_bitManip_trace.vcd",1000);
 
 const struct avr_mmcu_vcd_trace_t _mytrace[] _MMCU_ = {
     { AVR_MCU_VCD_SYMBOL("PINA"), .mask = 1 << 0,.what = (void*)&PINA, } , // Example individual pin
-    { AVR_MCU_VCD_SYMBOL("PINB"), .mask = 1 << 0,.what = (void*)&PINB, } , // Example individual pin
     { AVR_MCU_VCD_SYMBOL("PORTC"), .what = (void*)&PORTB, } , // Example full port
 };
 

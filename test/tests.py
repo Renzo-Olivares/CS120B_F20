@@ -147,6 +147,14 @@ tests = [
     'steps': [ {'inputs': [('PINA',0x1F)], 'iterations': 1 } ],
     'expected': [('PORTC',0x3F)],
     },
+    {'description': 'Test 34: PINA: 0x00 => PORTC: 0x40',
+    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 } ],
+    'expected': [('PORTC',0x40)],
+    },
+    {'description': 'Test 35: PINA: 0x30 => PORTC: 0xC0',
+    'steps': [ {'inputs': [('PINA',0x30)], 'iterations': 1 } ],
+    'expected': [('PORTC',0xC0)],
+    },
     # {'description': 'This test will run second.',
     # 'steps': [ {'inputs': [('PIN', <val>)],'iterations': 1}, # Set PIN to val then run one iteration
     #     {'inputs': [('PIN',<val>)], 'time': 300 }, # Set PIN to val then run 300 ms
@@ -160,4 +168,3 @@ tests = [
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
 # variables listed here will display everytime you hit (and stop at) a breakpoint
 watch = ['main::fuellevel']
-

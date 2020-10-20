@@ -20,10 +20,7 @@ tests = [
     [ 
         {
             'inputs': [('PINA',0x01)], 'iterations': 1 
-        },
-        {
-            'inputs': [('PINB',0x00)], 'iterations': 1 
-        } 
+        }
     ],
     'expected': [('PORTC',0x01)],
     },

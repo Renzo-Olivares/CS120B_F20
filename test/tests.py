@@ -33,7 +33,7 @@ tests = [
     },
     {'description': 'Test 5: PINA: 0x0F => PORTB: 0x04',
     'steps': [ {'inputs': [('PINA',0x0F)], 'iterations': 1 } ],
-    'expected': [('PORTC',0x04)],
+    'expected': [('PORTC',0x84)],
     },
     {'description': 'Test 6: PINA: 0x00 => PORTB: 0x00',
     'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 } ],

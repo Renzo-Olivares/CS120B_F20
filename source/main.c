@@ -1,11 +1,9 @@
 /*	Author: roliv006
  *  Partner(s) Name: 
  *	Lab Section: 22
- *	Assignment: Lab #2  Exercise #2
- *	Exercise Description: Port A's pins 3 to 0, each connect to a parking space sensor, 1 meaning
- *  a car is parked in the space, of a four space parking lot. Write a program" that outputs in
- *  binary on Port C the number of available spaces (Hint: declare a variable "unsigned char cntavail;"
- *  you can assign a number to a port as follows: PORTC = cntavail;).
+ *	Assignment: Lab #2  Exercise #3
+ *	Exercise Description: Extend the previous program to still write the available spaces number, but only to
+ *  PC3..PC0, and to set PC7 to 1 if the lot is full.
  *  
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -24,6 +22,7 @@ void Tick(){
     unsigned char pinA2 = (PINA & 0x04) >> 2;
     unsigned char pinA3 = (PINA & 0x08) >> 3;
     unsigned char availcnt = pinA0 + pinA1 + pinA2 + pinA3;
+    unsigned char fulllots = (pinA0 & pinA1 & pinA2 & pinA3)
 
    switch(state){
       case START:
@@ -38,7 +37,7 @@ void Tick(){
       case START:
          break;
       case OUTPUT:
-         PORTC = availcnt;
+         PORTC = availcnt | fulllots;
          break;
       default:
          break;

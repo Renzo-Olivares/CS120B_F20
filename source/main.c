@@ -16,44 +16,22 @@
 #include "simAVRHeader.h"
 #endif
 
-enum States{START, COUNT, ONE, TWO, THREE, FOUR, OUTPUT}state;
-unsigned char availcnt = 0x00;
-unsigned char pastSensor = 0x00;
+enum States{START, OUTPUT}state;
 
 void Tick(){
     unsigned char pinA0 = PINA & 0x01;
     unsigned char pinA1 = PINA & 0x02;
     unsigned char pinA2 = PINA & 0x04;
     unsigned char pinA3 = PINA & 0x08;
+    unsigned char availcnt = pinA0 + pinA1 + pinA2 + pinA3;
 
    switch(state){
       case START:
-         state = COUNT;
-         printf("start transition\n");
-         break;
-      case COUNT:
-         state = !pinA0 && !pinA1 && !pinA2 && !pinA3? OUTPUT: ONE;
-         printf("count transition\n");
-         break;
-      case ONE:
-         state = pinA1 || pinA2 || pinA3? TWO: OUTPUT;
-         printf("one transition\n");
-         break;
-      case TWO:
-         state = pinA1 || pinA2? THREE: OUTPUT;
-         printf("two transition\n");
-         break;
-      case THREE:
-         state = pinA2? FOUR: OUTPUT;
-         printf("three transition\n");
-         break;
-      case FOUR:
          state = OUTPUT;
-         printf("four transition\n");
+         printf("start transition\n");
          break;
       case OUTPUT:
          printf("out transition\n");
-         state = pastSensor != (pinA0 + pinA1 + pinA2 + pinA3)? COUNT: OUTPUT;
          break;
       default:
          printf("error transition\n");
@@ -62,37 +40,6 @@ void Tick(){
    switch(state){
       case START:
          printf("start state\n");
-         break;
-      case COUNT:
-         PORTC = 0x00;
-         availcnt = 0x00;
-         pastSensor = 0x00;
-         printf("count state\n");
-         break;
-      case ONE:
-         if(pinA0){
-            availcnt++;
-         }
-         printf("one state\n");
-         break;
-      case TWO:
-         if(pinA1){
-            availcnt++;
-         }
-         printf("two sttae\n");
-         break;
-      case THREE:
-         if(pinA2){
-            availcnt++;
-         }
-         printf("three state\n");
-         break;
-      case FOUR:
-         if(pinA3){
-            availcnt++;
-         }
-         pastSensor = pinA0 + pinA1 + pinA2 + pinA3;
-         printf("four state\n");
          break;
       case OUTPUT:
          PORTC = availcnt;

@@ -21,7 +21,7 @@ void Tick(){
 
     switch(state){
         case START:
-            B = 0x01;
+            PORTB = 0x01;
             state = OFF_RELEASE;
             break;
         case OFF_RELEASE:
@@ -46,12 +46,12 @@ void Tick(){
         case OFF_RELEASE:
             break;
         case ON_PRESS:
-            B = 0x02;
+            PORTB = 0x02;
             break;
         case ON_RELEASE:
             break;
         case OFF_PRESS:
-            B = 0x01;
+            PORTB = 0x01;
             break;
         default:
             break;

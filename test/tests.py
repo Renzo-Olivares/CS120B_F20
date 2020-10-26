@@ -15,13 +15,21 @@
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
 tests = [ 
-    {'description': 'This test will run first.',
+    {'description': 'This test will try to exercise every state until we return to OFF_RELEASE',
     'steps': [ 
         {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
         {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
         {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
-        # {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
-        # {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+     ],
+    'expected': [('PORTB',0x01)],
+    },
+    {'description': 'This test will try to exercise states up to ON_RELEASE',
+    'steps': [ 
+        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
+        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
      ],
     'expected': [('PORTB',0x02)],
     },

@@ -17,13 +17,13 @@
 tests = [ 
     {'description': 'This test will try to exercise every state until we return to OFF_RELEASE',
     'steps': [ 
-        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x07)] },
+        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTC', 0x07)] },
         # {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTC', 0x02)] },
         # {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x02)] },
         # {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTC', 0x01)] },
         # {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x01)] },
      ],
-    'expected': [('PORTC',0x07)],
+    'expected': [('PORTC',0x08)],
     },
     # {'description': 'This test will try to exercise states up to ON_RELEASE',
     # 'steps': [ 

@@ -70,22 +70,22 @@ void Tick(){
         case START:
             break;
         case DECREMENT_RELEASE:
-            if(!pinA0 && !pinA1){
-                PORTC = 0x00;
-            }
+            // if(!pinA0 && !pinA1){
+            //     PORTC = 0x00;
+            // }
             break;
         case INCREMENT_PRESS:
-            if(cnt != 9){
+            if(cnt < 9){
                 cnt++;
             }
             break;
         case INCREMENT_RELEASE:
-            if(!pinA0 && !pinA1){
-                PORTC = 0x00;
-            }
+            // if(!pinA0 && !pinA1){
+            //     PORTC = 0x00;
+            // }
             break;
         case DECREMENT_PRESS:
-            if(cnt != 0){
+            if(cnt > 0){
                 cnt--;
             }
             break;

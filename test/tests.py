@@ -16,7 +16,13 @@
 # altered in between executions (unless preconditions are used).
 tests = [ 
     {'description': 'This test will run first.',
-    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 1 } ],
+    'steps': [ 
+        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
+        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
+        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+     ],
     'expected': [('PORTB',0x01)],
     },
     # {'description': 'This test will run second.',

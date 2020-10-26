@@ -17,22 +17,22 @@
 tests = [ 
     {'description': 'This test will try to exercise every state until we return to OFF_RELEASE',
     'steps': [ 
-        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
-        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
-        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
-        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
-        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
+        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x07)] },
+        # {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTC', 0x02)] },
+        # {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x02)] },
+        # {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTC', 0x01)] },
+        # {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x01)] },
      ],
-    'expected': [('PORTB',0x01)],
+    'expected': [('PORTC',0x07)],
     },
-    {'description': 'This test will try to exercise states up to ON_RELEASE',
-    'steps': [ 
-        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x01)] },
-        {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
-        {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTB', 0x02)] },
-     ],
-    'expected': [('PORTB',0x02)],
-    },
+    # {'description': 'This test will try to exercise states up to ON_RELEASE',
+    # 'steps': [ 
+    #     {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x01)] },
+    #     {'inputs': [('PINA',0x01)], 'iterations': 1, 'expected': [('PORTC', 0x02)] },
+    #     {'inputs': [('PINA',0x00)], 'iterations': 1, 'expected': [('PORTC', 0x02)] },
+    #  ],
+    # 'expected': [('PORTC',0x02)],
+    # },
     # {'description': 'This test will run second.',
     # 'steps': [ {'inputs': [('PIN', <val>)],'iterations': 1}, # Set PIN to val then run one iteration
     #     {'inputs': [('PIN',<val>)], 'time': 300 }, # Set PIN to val then run 300 ms

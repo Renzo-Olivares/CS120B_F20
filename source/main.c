@@ -25,16 +25,16 @@ void Tick(){
             state = OFF_RELEASE;
             break;
         case OFF_RELEASE:
-            state = A0? ON_PRESS : OFF_RELEASE;
+            state = pinA0? ON_PRESS : OFF_RELEASE;
             break;
         case ON_PRESS:
-            state = A0? ON_PRESS : ON_RELEASE;
+            state = pinA0? ON_PRESS : ON_RELEASE;
             break;
         case ON_RELEASE:
-            state = A0? OFF_PRESS: ON_RELEASE;
+            state = pinA0? OFF_PRESS: ON_RELEASE;
             break;
         case OFF_PRESS:
-            state = A0? OFF_PRESS : OFF_RELEASE;
+            state = pinA0? OFF_PRESS : OFF_RELEASE;
             break;
         default:
             break;

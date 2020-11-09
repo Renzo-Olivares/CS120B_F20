@@ -40,11 +40,24 @@ void Tick() {
 
     switch(state){
         case START:
-            PORTB = x >= MAX/2 ? 0x01 : 0x00;
+            state = (x >= MAX/2) ? LEDON : LEDOFF;
             break;
         case LEDON:
+            state = (x >= MAX/2) ? LEDON : LEDOFF;
             break;
         case LEDOFF:
+            state = (x >= MAX/2) ? LEDON: LEDOFF;
+            break;
+        default:
+            break;
+    }
+
+    switch(state){
+        case LEDON:
+            PORTB = 0x01;
+            break;
+        case LEDOFF:
+            PORTB = 0x00;
             break;
         default:
             break;
@@ -53,10 +66,8 @@ void Tick() {
 
 int main(void) {
     DDRB = 0xFF; // Set port B to output
-    DDRD = 0xFF;
     DDRA = 0x00;
     PORTB = 0x00; // Init port B to 0s
-    PORTD = 0x00;
     PORTA = 0xFF;
 
     state = START;
